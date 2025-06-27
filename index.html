@@ -41,6 +41,24 @@
           <button id="confirmWithdraw" class="mt-2 bg-white cursor-pointer text-black px-4 py-2 rounded font-semibold">Confirm Withdraw</button>
         </div>
 
+        <!-- Transaction History -->
+        <div id="historySection" class="hidden">
+          <h2 class="text-xl font-semibold mb-2">Transaction History</h2>
+          <div class="overflow-x-auto">
+            <table class="w-full text-left">
+              <thead>
+                <tr>
+                  <th class="p-2 border-b border-gray-600">Date</th>
+                  <th class="p-2 border-b border-gray-600">Type</th>
+                  <th class="p-2 border-b border-gray-600">Amount</th>
+                  <th class="p-2 border-b border-gray-600">Balance</th>
+                </tr>
+              </thead>
+              <tbody id="transactionTable"></tbody>
+            </table>
+          </div>
+        </div>
+
       </div>
 
     </div>
