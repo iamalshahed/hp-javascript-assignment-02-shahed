@@ -14,7 +14,6 @@ const addAmountInput = document.getElementById("addAmount");
 const withdrawAmountInput = document.getElementById("withdrawAmount");
 const transactionTable = document.getElementById("transactionTable");
 
-
 // Initial Balance and Transaction Log
 let balance = 0;
 let transactions = [];
@@ -36,6 +35,19 @@ function logTransaction(type, amount) {
   renderTransactionTable();
 }
 
+function renderTransactionTable() {
+  transactionTable.innerHTML = "";
+  transactions.forEach((t) => {
+    const row = document.createElement("tr");
+    row.innerHTML = `
+      <td class="p-2 border-b border-gray-700">${t.date}</td>
+      <td class="p-2 border-b border-gray-700">${t.type}</td>
+      <td class="p-2 border-b border-gray-700">BDT ${t.amount}</td>
+      <td class="p-2 border-b border-gray-700">BDT ${t.currentBalance}</td>
+    `;
+    transactionTable.appendChild(row);
+  });
+}
 
 // Toggle Visibility
 function showSection(section) {
@@ -49,7 +61,6 @@ function showSection(section) {
 addBtn.addEventListener("click", () => showSection(addForm));
 withdrawBtn.addEventListener("click", () => showSection(withdrawForm));
 historyBtn.addEventListener("click", () => showSection(historySection));
-
 
 // Add Money
 confirmAdd.addEventListener("click", () => {
