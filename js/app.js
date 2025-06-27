@@ -35,3 +35,17 @@ function logTransaction(type, amount) {
   transactions.unshift(transaction); // add to top
   renderTransactionTable();
 }
+
+
+// Toggle Visibility
+function showSection(section) {
+  addForm.classList.add("hidden");
+  withdrawForm.classList.add("hidden");
+  historySection.classList.add("hidden");
+  section.classList.remove("hidden");
+}
+
+// Button Event Listeners
+addBtn.addEventListener("click", () => showSection(addForm));
+withdrawBtn.addEventListener("click", () => showSection(withdrawForm));
+historyBtn.addEventListener("click", () => showSection(historySection));
